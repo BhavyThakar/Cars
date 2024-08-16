@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="icon-removebg-preview.png" type="image/png">
+    <title>CARS</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"> <!-- bootstrap core css -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- fonts style -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <!-- owl slider stylesheet -->
+    <link href="font-awesome.min.css" rel="stylesheet"> <!-- font awesome style -->
+    <link href="style.css" rel="stylesheet"> <!-- Custom styles for this template -->
+    <link href="responsive.css" rel="stylesheet"> <!-- responsive style -->
+
+    <style>
+        body {
+            background-color: #231a6f;
+            color: white;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column1 {
+            float: left;
+            width: 20%;
+            padding-left: 250px;
+        }
+
+        .row1:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .image-box-section {
+            background-color: #231a6f;
+            /* Background color for the section */
+            padding: 30px 0;
+        }
+
+        .image-box {
+            position: relative;
+            background-image: url(black-background-with-focus-spot-light_1017-27230.jpg);
+            background-size: cover;/* Cover the container without distortion */
+            background-position: center;/* Center the image */
+            background-repeat: no-repeat;/* Prevent the image from repeating */
+            height: 300px;/* Adjust as needed */
+            border-radius: 40px;/* Adjust as needed for curved corners */
+            padding-right: 10%;/* Create space for the image to extend beyond the box */
+            box-shadow: 20px 30px 17px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-box:hover{
+            box-shadow: 20px 30px 17px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-box img {
+            display: block;/* Remove extra space below image */
+            width: 100%;/* Ensure the image takes full width of the box */
+            height: auto;/* Maintain aspect ratio */
+            position: absolute;/* Position the image absolutely within the box */
+            top: 55px;/* Align with the top of the container */
+            left: 0;/* Align with the left of the container */
+            transform: translateX(10%);/* Adjust this percentage to control how far the image extends */
+            clip-path: inset(0 0 0 0);/* Ensure image fits within the curved box */
+        }
+
+
+        .content-box {
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .image-box {
+                height: 200px;
+                /* Adjust height for smaller screens */
+                box-shadow: 20px 30px 17px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+
+         /* Custom dropdown styles */
+        .dropdown-menu {
+            background-color: white; /* Solid background color */
+            border: none; /* Remove border */
+        }
+
+        .dropdown-item {
+            color: black; /* Text color */
+        }
+
+        .dropdown-item:hover {
+            background-color: #231a6f; /* Background color on hover */
+            color: #FFD700; /* Glowing text color */
+            text-shadow: 0 0 8px #FFD700; /* Glowing effect (yellow glow in this case) */
+        }
+
+        /* Ensure the dropdown background is solid on all screen sizes */
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                background-color: white !important; /* Ensure background color on mobile screens */
+            }
+        }
+
+        .search-bar {
+            display: inline-block;
+            width: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: width 0.5s ease, opacity 0.5s ease;
+            margin-left: 10px;
+            border-radius: 0;
+            background-color: #333;
+            color: white;
+            border: 1px solid #444;
+        }
+
+        .search-bar.show {
+            width: 200px; /* Set to desired width */
+            opacity: 1;
+        }
+
+        .search-bar.hide {
+            width: 0;
+            opacity: 0;
+        }
+    </style>
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+</head>
+
+<body>
+    <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand" href="index.html"><span>CARS</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class=""></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="about.php">About</a>
+                        </li> -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cars
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="toyota.html">Toyota</a>
+                                <a class="dropdown-item" href="bmw.html">BMW</a>
+                                <a class="dropdown-item" href="Volkswagen.html">Volkswagen</a>
+                                <a class="dropdown-item" href="Jaguar.html">Jaguar</a>
+                                <a class="dropdown-item" href="Maruti Suzuki.html">Maruti Suzuki</a>
+                                <a class="dropdown-item" href="Mercedes.html">Mercedes</a>
+                                <a class="dropdown-item" href="Hyundai.html">Hyundai</a>
+                                <a class="dropdown-item" href="Kia.html">Kia</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback.html"><i class="fa fa-user" aria-hidden="true"></i> feedback</a>
+                        </li>
+                        <form class="form-inline">
+                            <button class="btn my-2 my-sm-0 nav_search-btn" type="button" id="search-toggle">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                            <input type="text" class="form-control search-bar" id="search-bar" placeholder="Search...">
+                        </form>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="slider_section">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="detail-box">
+                                    <h1>BMW-M4-CSL</h1>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, accusantium
+                                        maxime. Pariatur fugit, repellat labore atque magnam minus quam error rerum sunt
+                                        debitis, quaerat molestias ad. Quas tempora eum fugiat!</p>
+                                    <div class="btn-box">
+                                        <a href="" class="btn1">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <model-viewer src="bmw_m4_csl_2023.glb" auto-rotate camera-controls alt="BMW M4 CSL"
+                                    background-color="black" style="height: 750px; width: 100%;"></model-viewer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="detail-box">
+                                    <h1>PORSCHE-GT3-RS</h1>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, accusantium
+                                        maxime. Pariatur fugit, repellat labore atque magnam minus quam error rerum sunt
+                                        debitis, quaerat molestias ad. Quas tempora eum fugiat!</p>
+                                    <div class="btn-box">
+                                        <a href="" class="btn1">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <model-viewer src="porsche_gt3_rs.glb" auto-rotate camera-controls alt="Porsche GT3 RS"
+                                    background-color="black" style="height: 750px; width: 100%;"></model-viewer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="detail-box">
+                                    <h1>MERCEDES-BENZ-G63-AMG</h1>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, accusantium
+                                        maxime. Pariatur fugit, repellat labore atque magnam minus quam error rerum sunt
+                                        debitis, quaerat molestias ad. Quas tempora eum fugiat!</p>
+                                    <div class="btn-box">
+                                        <a href="" class="btn1">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <model-viewer src="mercedes-benz_g63_amg_w464.glb" auto-rotate camera-controls
+                                    alt="Mercedes-Benz G63 AMG" background-color="black"
+                                    style="height: 750px; width: 100%;"></model-viewer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ol class="carousel-indicators">
+                <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#customCarousel1" data-slide-to="1"></li>
+                <li data-target="#customCarousel1" data-slide-to="2"></li>
+            </ol>
+            <section class="image-box-section"> <!--about section-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="image-box">
+                                <img src="m2-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Your Image">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="content-box">
+                                <h2>What we provide?</h2>
+                                <p>We provide information about cars technology and some other information.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="brand-logos-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 logo-column">
+                            <a href="toyota.html">
+                            <div class="logo-box">
+                                <img src="Toyota-logo-icon-on-transparent_-_PNG-removebg-preview-removebg-preview.png"
+                                 alt="Toyota Logo">
+                                 <p class="logo-name">Toyota</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 logo-column">
+                            <a href="bmw.html">
+                            <div class="logo-box">
+                                <img src="vendor-7.png" alt="BMW Logo">
+                                 <p class="logo-name">BMW</p>
+                            </div>
+                        </a>
+                        </div>
+                        <div class="col-md-3 logo-column">
+                            <a href="Volkswagen.html">
+                            <div class="logo-box">
+                                <img src="vendor-1.png" alt="Volkswagen Logo">
+                                 <p class="logo-name">Volkswagen</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 logo-column">
+                            <a href="Jaguar.html">
+                            <div class="logo-box">
+                                <img src="vendor-8.png" alt="Jaguar Logo">
+                                 <p class="logo-name">Jaguar</p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 logo-column">
+                            <a href="Maruti Suzuki.html">
+                            <div class="logo-box">
+                                <img src="Suzuki.png" alt="Maruti Suzuki Logo">
+                                 <p class="logo-name">Maruti Suzuki</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 logo-column">
+                            <a href="Mercedes.html">
+                            <div class="logo-box">
+                                <img src="vendor-3.png" alt="Mercedes Logo">
+                                 <p class="logo-name">Mercedes</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 logo-column">
+                            <a href="Hyundai.html">
+                            <div class="logo-box">
+                                <img src="hyundai-logo-2011-download.png" alt="Hyundai Logo">
+                                 <p class="logo-name">Hyundai</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 logo-column">
+                            <a href="Kia.html">
+                            <div class="logo-box">
+                                <img src="Kia-logo-640x321-removebg-preview.png" alt="Kia Logo">
+                                 <p class="logo-name">Kia</p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </section>
+
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <!-- <li><a href="about.php">About</a></li> -->
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: info@cars.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="text-center">&copy; 2024 Cars. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="jquery-3.4.1.min.js"></script> <!-- jQuery -->
+    <script src="bootstrap.js"></script> <!-- bootstrap js -->
+    <script>
+        document.getElementById('search-toggle').addEventListener('click', function() {
+            var searchBar = document.getElementById('search-bar');
+            if (searchBar.classList.contains('show')) {
+                searchBar.classList.remove('show');
+                searchBar.classList.add('hide');
+            } else {
+                searchBar.classList.remove('hide');
+                searchBar.classList.add('show');
+                searchBar.focus();
+            }
+        });
+    </script>
+</body>
+
+</html>
