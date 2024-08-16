@@ -1,0 +1,2401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"> <!-- bootstrap core css -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- fonts style -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <!-- owl slider stylesheet -->
+    <link href="font-awesome.min.css" rel="stylesheet"> <!-- font awesome style -->
+    <link href="style.css" rel="stylesheet"> <!-- Custom styles for this template -->
+    <link href="responsive.css" rel="stylesheet"> <!-- responsive style -->
+    <style>
+        body {
+            background-color: #231a6f;
+            color: white;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .header_section,
+        .footer_section {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .container-fluid,
+        .container {
+            width: 100%;
+            padding: 0 15px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .col-md-6 {
+            width: 100%;
+            padding: 0 15px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            /* Added margin for spacing */
+        }
+
+        .two-column-layout {
+            margin: 20px 0;
+        }
+
+        .two-column-layout .left,
+        .two-column-layout .right {
+            padding: 20px;
+            border-radius: 8px;
+            color: #fffdfd;
+            box-sizing: border-box;
+        }
+
+        .two-column-layout .right h2 {
+            font-size: 28px;
+            background-color: #00d5ff89;
+            color: #ffffff;
+        }
+
+        .two-column-layout .right p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        /* Custom dropdown styles */
+        .dropdown-menu {
+            background-color: white;
+            border: none;
+        }
+
+        .dropdown-item {
+            color: black;
+        }
+
+        .dropdown-item:hover {
+            background-color: #231a6f;
+            color: #FFD700;
+            text-shadow: 0 0 8px #FFD700;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                background-color: white !important;
+            }
+        }
+
+        .search-bar {
+            display: inline-block;
+            width: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: width 0.5s ease, opacity 0.5s ease;
+            margin-left: 10px;
+            border-radius: 0;
+            background-color: #333;
+            color: white;
+            border: 1px solid #444;
+        }
+
+        .search-bar.show {
+            width: 200px;
+            opacity: 1;
+        }
+
+        .search-bar.hide {
+            width: 0;
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .col-md-6 {
+                width: 100%;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        /* Table styling */
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            margin-left: 30px;
+        }
+
+        .custom-table th,
+        .custom-table td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        .custom-table thead th {
+            background-color: #000000;
+            /* Grey color for header row */
+            color: #fff;
+            /* White text color */
+        }
+
+        .custom-table tbody tr:nth-child(even) {
+            background-color: rgba(0, 255, 238, 0.473);
+            /* Transparent background for even rows */
+        }
+
+        .custom-table tbody tr:nth-child(odd) {
+            background-color: rgba(0, 0, 0, 0);
+            /* Dark transparent background for odd rows */
+        }
+
+        .custom-table tbody td {
+            color: #fff;
+            /* White text color for all rows */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .col-md-6 {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            #carousel1 {
+                margin-left: -100px;
+            }
+
+            #carousel2 {
+                margin-left: -100px;
+            }
+
+            #carousel3 {
+                margin-left: -100px;
+            }
+
+            #carousel4 {
+                margin-left: -100px;
+            }
+
+            .h1{
+                margin-left: 230px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #carousel1 {
+                margin-left: 0px;
+            }
+
+            #carousel2 {
+                margin-left: 0px;
+            }
+
+            #carousel3 {
+                margin-left: 0px;
+            }
+
+            #carousel4 {
+                margin-left: 0px;
+            }
+
+            .header_section,
+            .footer_section {
+                padding: 10px 0;
+            }
+
+            .two-column-layout .left,
+            .two-column-layout .right {
+                padding: 10px;
+            }
+
+            .two-column-layout .right h2 {
+                font-size: 24px;
+                margin-left: 30px;
+            }
+
+            .two-column-layout .right p {
+                font-size: 14px;
+                margin-left: 30px;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .custom-table th,
+            .custom-table td {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand" href="index.h"><span>CARS</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class=""></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cars</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="toyota.html">Toyota</a>
+                                <a class="dropdown-item" href="bmw.html">BMW</a>
+                                <a class="dropdown-item" href="Volkswagen.html">Volkswagen</a>
+                                <a class="dropdown-item" href="Jaguar.html">Jaguar</a>
+                                <a class="dropdown-item" href="Maruti Suzuki.html">Maruti Suzuki</a>
+                                <a class="dropdown-item" href="Mercedes.html">Mercedes</a>
+                                <a class="dropdown-item" href="Hyundai.html">Hyundai</a>
+                                <a class="dropdown-item" href="Kia.html">Kia</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback.html"><i class="fa fa-user" aria-hidden="true"></i>
+                                feedback</a>
+                        </li>
+                        <form class="form-inline">
+                            <button class="btn my-2 my-sm-0 nav_search-btn" type="button" id="search-toggle">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                            <input type="text" class="form-control search-bar" id="search-bar" placeholder="Search...">
+                        </form>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container">
+        <!-- Row 1 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel1">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="1.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="1.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="1.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz G-Class</h2>
+                <p>Mercedes-Benz G-Class price for the base model starts at Rs. 2.55 Crore and the top model
+                    price goes upto Rs. 4.00 Crore (Avg. ex-showroom).</p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>petrol & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>2925 to 3982 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>326 to 577 bhp & 700 to 850 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>4WD / AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>4.5 to 6.4 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>210 to 220 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel2">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="2.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="2.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="2.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz A-Class Limousine</h2>
+                <p>Mercedes-Benz A-Class Limousine price for the base model starts at Rs. 42.80 Lakh and the
+                    top model price goes upto Rs. 47.00 Lakh (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine,Engine Type
+                                </td>
+                                <td>
+                                    1332 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>
+                                    161 bhp & 270 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>FWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>8.3 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>230 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel3">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="3.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="3.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="3.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz C-Class</h2>
+                <p>Mercedes-Benz C-Class price for the base model starts at Rs. 57.00 Lakh and the top model
+                    price goes upto Rs. 62.00 Lakh (Avg. ex-showroom).</p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine,Engine Type</td>
+                                <td>1496 to 1993 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>197 to 261 bhp & 300 to 550 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>RWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>5.7 to 7.3 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>245 to 250 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel4">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="4.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="4.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="4.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz Maybach S-Class</h2>
+                <p>Mercedes-Benz Maybach S-Class price for the base model starts at Rs. 2.69 Crore and the top
+                    model price goes upto Rs. 3.40 Crore (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>
+                                    Hybrid & Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine,Engine Type</td>
+                                <td>
+                                    3982 to 5980 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>
+                                    496 to 603 bhp & 700 to 900 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>4.5 to 4.8 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>250 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel5">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="5.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="5.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="5.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz GLA</h2>
+                <p>Mercedes-Benz GLA price for the base model starts at Rs. 48.50 Lakh and the top model price
+                    goes upto Rs. 52.70 Lakh (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>
+                                    Petrol & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>1332 to 1950 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>161 to 188 bhp & 250 to 400 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>FWD & AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>7.22 to 8.7 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>210 to 222 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 6 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel6">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="6.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="6.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="6.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>mercedes benz gls </h2>
+                <p>Mercedes-Benz GLS price for the base model starts at Rs. 1.32 Crore and the top model price
+                    goes upto Rs. 1.37 Crore (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>petrol & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>2989 to 2999 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>362 to 375 bhp & 500 to 750 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>6.2 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>250 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 7 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel7">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="7.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="7.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="7.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz GLE</h2>
+                <p>Mercedes-Benz GLE price for the base model starts at Rs. 96.40 Lakh and the top model price
+                    goes upto Rs. 1.15 Crore (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Hybrid & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>1993 to 2999 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>265 to 375 bhp & 500 to 750 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>5.6 to 6.9 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>230 to 250 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 8 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel8">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="8.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="8.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="8.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz AMG C 43</h2>
+                <p>Mercedes-Benz AMG C 43 price for the base model is Rs. 98.00 Lakh (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>
+                                    1991 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>402 bhp & 500 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>4.6 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>250 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 9 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel9">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="9.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="9.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="9.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz Maybach GLS</h2>
+                <p>Mercedes-Benz Maybach GLS price for the base model is Rs. 2.96 Crore (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>
+                                    3982 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>
+                                    550 bhp & 730 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>4.9 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>250 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 10 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel10">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="10.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="10.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="10.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz E-Class</h2>
+                <p>Mercedes-Benz E-Class price for the base model starts at Rs. 75.00 Lakh and the top model
+                    price goes upto Rs. 88.00 Lakh (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>1950 to 2925 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>192 to 282 bhp & 320 to 600 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>RWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>6.1 to 7.6 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>240 to 250 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 11 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel11">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="11.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="11.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="11.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz S-Class</h2>
+                <p>Mercedes-Benz S-Class price for the base model starts at Rs. 1.71 Crore and the top model
+                    price goes upto Rs. 1.80 Crore (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>petrol & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>
+                                    2925 to 2999 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>
+                                    282 to 362 bhp & 500 to 600 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>
+                                    5.1 to 6.4 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>250 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 12 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel12">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="12.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="12.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="12.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz GLC Coupe</h2>
+                <p>Mercedes-Benz GLC Coupe price for the base model starts at Rs. 72.50 Lakh and the top model
+                    price goes upto Rs. 73.50 Lakh (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>
+                                    Petrol & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>
+                                    1950 to 1991 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>
+                                    241 to 255 bhp & 370 to 500 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>6.3 to 6.6 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>
+                                    233 to 240 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 13 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel13">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="13.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="13.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="13.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz GLB</h2>
+                <p>Mercedes-Benz GLB price for the base model starts at Rs. 63.80 Lakh and the top model price
+                    goes upto Rs. 69.80 Lakh (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>
+                                    Petrol & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>
+                                    1332 to 1950 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>160 to 188 bhp & 250 to 400 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>
+                                    FWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>
+                                    7.6 to 9.1 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>
+                                    207 to 220 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Row 14 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel14">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="14.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="14.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="14.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz AMG E53 Cabriolet</h2>
+                <p>Mercedes-Benz AMG E53 Cabriolet price for the base model is Rs. 1.30 Crore (Avg.
+                    ex-showroom).</p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>2999 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>
+                                    429 bhp & 520 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>
+                                    4.5 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>250 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 15 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel15">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="15.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="15.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="15.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz AMG A35</h2>
+                <p>Mercedes-Benz AMG A35 price for the base model is Rs. 58.00 Lakh (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>1991 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>301 bhp & 400 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>4.98 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>250 Kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 16 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel16">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="sl55.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="sl55.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="sl55.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz AMG SL55 Roadster</h2>
+                <p>Mercedes-Benz AMG SL55 Roadster price for the base model is Rs. 2.35 Crore (Avg.
+                    ex-showroom).</p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>
+                                    3982 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>496 bhp & 700Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>3.9 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>295 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 17 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel17">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="17.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="17.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="17.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz AMG GLA35</h2>
+                <p>Mercedes-Benz AMG GLA35 price for the base model is Rs. 63.50 Lakh (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>
+                                    1991 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>302 bhp and 400 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>6.46 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>250 Kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 18 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel18">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="18.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="18.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="18.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz AMG GLC43 Coupe</h2>
+                <p>Mercedes-Benz AMG GLC43 Coupe price for the base model is Rs. 87.00 Lakh (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>2996 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>385 bhp & 520 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>4.9 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>250 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 19 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel19">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="19.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="19.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="19.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz AMG GT 63 S E Performance</h2>
+                <p>Mercedes-Benz AMG GT 63 S E Performance price for the base model is Rs. 3.30 Crore (Avg.
+                    ex-showroom).</p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>3982 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>620.28 bhp & 900 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>2.9 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>316 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 20 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel20">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="20.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="20.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="20.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz AMG A45 S</h2>
+                <p>Mercedes-Benz AMG A45 S price for the base model is Rs. 87.50 Lakh (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>
+                                    1991 cc, 4 Cylinders Inline, 4 Valves/Cylinder, DOHC</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>421 bhp & 500 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>3.9 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>270 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 21 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel21">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="21.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="21.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="21.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz AMG E53</h2>
+                <p>Mercedes-Benz AMG E53 price for the base model is Rs. 1.06 Crore (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>2999 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>355 bhp & 500 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>4.5 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>250 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 22 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel22">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="22.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="22.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="22.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz GLC</h2>
+                <p>Mercedes-Benz GLC price for the base model starts at Rs. 73.50 Lakh and the top model price
+                    goes upto Rs. 74.50 Lakh (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>
+                                    Petrol & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>
+                                    1993 to 1999 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>
+                                    194 to 255 bhp & 400 to 440 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>6.2 to 8 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>219 to 240 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 23 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel23">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="23.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="23.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="23.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz EQB</h2>
+                <p>Mercedes-Benz EQB price for the base model starts at Rs. 74.50 Lakh and the top model price
+                    goes upto Rs. 77.50 Lakh (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Electric</td>
+                            </tr>
+                            <!-- <tr> 
+                                <td>Engine</td>
+                                <td>4395 cc</td>
+                            </tr>-->
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>225.29 bhp & 390 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>FWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>3.80 to 6.20 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>160 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 24 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel24">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="24.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="24.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="24.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz AMG GLE Coupe</h2>
+                <p>Mercedes-Benz AMG GLE Coupe price for the base model starts at Rs. 1.61 Crore and the top
+                    model price goes upto Rs. 2.24 Crore (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>
+                                    2999 to 3892 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>429 to 603 bhp & 520 to 850 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>3.8 to 5.3 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>
+                                    250 to 280 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 25 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel25">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="25.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="25.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="25.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz EQS</h2>
+                <p>Mercedes-Benz EQS price for the base model is Rs. 1.62 Crore (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Electric</td>
+                            </tr>
+                            <!--<tr>
+                                <td>Engine</td>
+                                <td>2998 cc</td>
+                            </tr>-->
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>750.97 bhp & 855 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>4.3 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>210 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 26 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel26">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="19.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="19.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="19.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz AMG GT 63 S E Performance</h2>
+                <p>Mercedes-Benz AMG GT 63 S E Performance price for the base model is Rs. 3.30 Crore (Avg.
+                    ex-showroom).</p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>3982 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>630.28 bhp & 900 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>6.1 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>200 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 27 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel27">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="26.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="26.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="26.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz AMG E63</h2>
+                <p>Mercedes-Benz AMG E63 price for the base model is Rs. 1.77 Crore (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>3982 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>603.46 bhp & 850 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>12.6 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>300 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 28 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel28">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="27.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="27.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="27.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz EQE SUV</h2>
+                <p>Mercedes-Benz EQE SUV price for the base model is Rs. 1.39 Crore (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Electric</td>
+                            </tr>
+                            <tr>
+                                <td>Battery Type</td>
+                                <td>lithium-ion</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>402 bhp & 858 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>4.9 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>210 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 29 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel29">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="28.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="28.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="28.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Mercedes-Benz EQS</h2>
+                <p>Mercedes-Benz EQS price for the base model is Rs. 1.62 Crore (Avg. ex-showroom).
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Electric</td>
+                            </tr>
+                            <tr>
+                                <td>Battery type</td>
+                                <td>lithium-ion</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>750.97 bhp & 855 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>4.3 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>210 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: info@cars.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="text-center">&copy; 2024 Cars. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function initializeCarousel(carouselId) {
+                const slides = document.querySelectorAll(`#${carouselId} .carousel-slide`);
+                let currentSlide = 0;
+                const totalSlides = slides.length;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.remove('active');
+                        if (i === index) {
+                            slide.classList.add('active');
+                        }
+                    });
+                }
+
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    showSlide(currentSlide);
+                }
+
+                showSlide(currentSlide);
+                setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            // Initialize each carousel
+            initializeCarousel('carousel1');
+            initializeCarousel('carousel2');
+            initializeCarousel('carousel3');
+            initializeCarousel('carousel4');
+            initializeCarousel('carousel5');
+            initializeCarousel('carousel6');
+            initializeCarousel('carousel7');
+            initializeCarousel('carousel8');
+            initializeCarousel('carousel9');
+            initializeCarousel('carousel10');
+            initializeCarousel('carousel11');
+            initializeCarousel('carousel12');
+            initializeCarousel('carousel13');
+            initializeCarousel('carousel14');
+            initializeCarousel('carousel15');
+            initializeCarousel('carousel16');
+            initializeCarousel('carousel17');
+            initializeCarousel('carousel18');
+            initializeCarousel('carousel19');
+            initializeCarousel('carousel20');
+            initializeCarousel('carousel21');
+            initializeCarousel('carousel22');
+            initializeCarousel('carousel23');
+            initializeCarousel('carousel24');
+            initializeCarousel('carousel25');
+            initializeCarousel('carousel26');
+            initializeCarousel('carousel27');
+            initializeCarousel('carousel28');
+            initializeCarousel('carousel29');
+        });
+
+        document.getElementById('search-toggle').addEventListener('click', function () {
+            var searchBar = document.getElementById('search-bar');
+            if (searchBar.classList.contains('show')) {
+                searchBar.classList.remove('show');
+                searchBar.classList.add('hide');
+            } else {
+                searchBar.classList.remove('hide');
+                searchBar.classList.add('show');
+                searchBar.focus();
+            }
+        });
+    </script>
+</body>
+
+</html>

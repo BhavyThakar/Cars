@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaguar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"> <!-- bootstrap core css -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- fonts style -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <!-- owl slider stylesheet -->
+    <link href="font-awesome.min.css" rel="stylesheet"> <!-- font awesome style -->
+    <link href="style.css" rel="stylesheet"> <!-- Custom styles for this template -->
+    <link href="responsive.css" rel="stylesheet"> <!-- responsive style -->
+    <style>
+        body {
+            background-color: #231a6f;
+            color: white;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .header_section,
+        .footer_section {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .container-fluid,
+        .container {
+            width: 100%;
+            padding: 0 15px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .col-md-6 {
+            width: 100%;
+            padding: 0 15px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            /* Added margin for spacing */
+        }
+
+        .two-column-layout {
+            margin: 20px 0;
+        }
+
+        .two-column-layout .left,
+        .two-column-layout .right {
+            padding: 20px;
+            border-radius: 8px;
+            color: #fffdfd;
+            box-sizing: border-box;
+        }
+
+        .two-column-layout .right h2 {
+            font-size: 28px;
+            background-color: #00d5ff89;
+            color: #ffffff;
+        }
+
+        .two-column-layout .right p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        /* Custom dropdown styles */
+        .dropdown-menu {
+            background-color: white;
+            border: none;
+        }
+
+        .dropdown-item {
+            color: black;
+        }
+
+        .dropdown-item:hover {
+            background-color: #231a6f;
+            color: #FFD700;
+            text-shadow: 0 0 8px #FFD700;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                background-color: white !important;
+            }
+        }
+
+        .search-bar {
+            display: inline-block;
+            width: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: width 0.5s ease, opacity 0.5s ease;
+            margin-left: 10px;
+            border-radius: 0;
+            background-color: #333;
+            color: white;
+            border: 1px solid #444;
+        }
+
+        .search-bar.show {
+            width: 200px;
+            opacity: 1;
+        }
+
+        .search-bar.hide {
+            width: 0;
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .col-md-6 {
+                width: 100%;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        /* Table styling */
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            margin-left: 30px;
+        }
+
+        .custom-table th,
+        .custom-table td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        .custom-table thead th {
+            background-color: #000000;
+            /* Grey color for header row */
+            color: #fff;
+            /* White text color */
+        }
+
+        .custom-table tbody tr:nth-child(even) {
+            background-color: rgba(0, 255, 238, 0.473);
+            /* Transparent background for even rows */
+        }
+
+        .custom-table tbody tr:nth-child(odd) {
+            background-color: rgba(0, 0, 0, 0);
+            /* Dark transparent background for odd rows */
+        }
+
+        .custom-table tbody td {
+            color: #fff;
+            /* White text color for all rows */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .col-md-6 {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            #carousel1 {
+                margin-left: -100px;
+            }
+
+            #carousel2 {
+                margin-left: -100px;
+            }
+
+            #carousel3 {
+                margin-left: -100px;
+            }
+
+            #carousel4 {
+                margin-left: -100px;
+            }
+
+            .h1{
+                margin-left: 230px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #carousel1 {
+                margin-left: 0px;
+            }
+
+            #carousel2 {
+                margin-left: 0px;
+            }
+
+            #carousel3 {
+                margin-left: 0px;
+            }
+
+            #carousel4 {
+                margin-left: 0px;
+            }
+
+            .header_section,
+            .footer_section {
+                padding: 10px 0;
+            }
+
+            .two-column-layout .left,
+            .two-column-layout .right {
+                padding: 10px;
+            }
+
+            .two-column-layout .right h2 {
+                font-size: 24px;
+                margin-left: 30px;
+            }
+
+            .two-column-layout .right p {
+                font-size: 14px;
+                margin-left: 30px;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .custom-table th,
+            .custom-table td {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand" href="index.h"><span>CARS</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class=""></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cars</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="toyota.html">Toyota</a>
+                                <a class="dropdown-item" href="bmw.html">BMW</a>
+                                <a class="dropdown-item" href="Volkswagen.html">Volkswagen</a>
+                                <a class="dropdown-item" href="Jaguar.html">Jaguar</a>
+                                <a class="dropdown-item" href="Maruti Suzuki.html">Maruti Suzuki</a>
+                                <a class="dropdown-item" href="Mercedes.html">Mercedes</a>
+                                <a class="dropdown-item" href="Hyundai.html">Hyundai</a>
+                                <a class="dropdown-item" href="Kia.html">Kia</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback.html"><i class="fa fa-user" aria-hidden="true"></i>
+                                feedback</a>
+                        </li>
+                        <form class="form-inline">
+                            <button class="btn my-2 my-sm-0 nav_search-btn" type="button" id="search-toggle">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                            <input type="text" class="form-control search-bar" id="search-bar" placeholder="Search...">
+                        </form>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container">
+        <!-- Row 1 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel1">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="f-type-exterior-right-front-three-quarter-3-removebg-preview.png"
+                                    alt="Image 1" style="margin-top: 10px;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="f-type-exterior-right-front-three-quarter-3-removebg-preview.png"
+                                    alt="Image 2" style="margin-top: 10px;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="f-type-exterior-right-front-three-quarter-3-removebg-preview.png"
+                                    alt="Image 3" style="margin-top: 10px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Jaguar F-Type</h2>
+                <p>Jaguar F-Type price for the base model starts at Rs. 1.19 Crore and the top model price goes upto Rs. 1.85 Crore.
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>1997 cc & 5000 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td> 443.8bhp & 580Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>RWD/AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>5.9 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>285 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel2">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="f-pace-exterior-right-front-three-quarter-4-removebg-preview.png"
+                                    alt="Image 1" style="margin-top: 20px;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="f-pace-exterior-right-front-three-quarter-4-removebg-preview.png"
+                                    alt="Image 2" style="margin-top: 20px;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="f-pace-exterior-right-front-three-quarter-4-removebg-preview.png"
+                                    alt="Image 3" style="margin-top: 20px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Jaguar F-Pace</h2>
+                <p>Jaguar F-Pace price for the base model starts at Rs. 86.70 Lakh and the top model price goes upto Rs. 88.18 Lakh .
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine,Engine Type
+                                </td>
+                                <td>1997 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>201 to 247 bhp & 365 to 430 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>7.3 to 8 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>210 to 217 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel3">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="i-pace-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 1" style="margin-top: 20px;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="i-pace-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 2" style="margin-top: 20px;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="i-pace-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 3" style="margin-top: 20px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Jaguar I-Pace</h2>
+                <p>Jaguar I-Pace price for the base model is Rs. 1.26 to 1.33 Crore
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Electric</td>
+                            </tr>
+                            <tr>
+                                <td>Engine,Engine Type</td>
+                                <td>lithium-ion battery </td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>394.26bhp & 696Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>4.5 to 4.8 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>200 kmph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel4">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="Jaguar-EPace-Exterior-170060-removebg-preview.png"
+                                    alt="Image 1" style="margin-top: 20px;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="Jaguar-EPace-Exterior-170060-removebg-preview.png"
+                                    alt="Image 2" style="margin-top: 20px;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="Jaguar-EPace-Exterior-170060-removebg-preview.png"
+                                    alt="Image 3" style="margin-top: 20px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Jaguar E-Pace</h2>
+                <p>Jaguar E-Pace 71.00 – 75.00 Lakh Estimated Price
+                    Oct 2025(Tentative) This Date Is Not Correct It Was Expected Launch Date</p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Engine,Engine Type</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage (ARAI)</td>
+                                <td>16.13 kmpl</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: info@cars.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="text-center">&copy; 2024 Cars. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function initializeCarousel(carouselId) {
+                const slides = document.querySelectorAll(`#${carouselId} .carousel-slide`);
+                let currentSlide = 0;
+                const totalSlides = slides.length;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.remove('active');
+                        if (i === index) {
+                            slide.classList.add('active');
+                        }
+                    });
+                }
+
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    showSlide(currentSlide);
+                }
+
+                showSlide(currentSlide);
+                setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            // Initialize each carousel
+            initializeCarousel('carousel1');
+            initializeCarousel('carousel2');
+            initializeCarousel('carousel3');
+            initializeCarousel('carousel4');
+        });
+
+        document.getElementById('search-toggle').addEventListener('click', function () {
+            var searchBar = document.getElementById('search-bar');
+            if (searchBar.classList.contains('show')) {
+                searchBar.classList.remove('show');
+                searchBar.classList.add('hide');
+            } else {
+                searchBar.classList.remove('hide');
+                searchBar.classList.add('show');
+                searchBar.focus();
+            }
+        });
+    </script>
+</body>
+
+</html>
