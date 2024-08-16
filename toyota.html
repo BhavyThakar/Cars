@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyota</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"> <!-- bootstrap core css -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- fonts style -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <!-- owl slider stylesheet -->
+    <link href="font-awesome.min.css" rel="stylesheet"> <!-- font awesome style -->
+    <link href="style.css" rel="stylesheet"> <!-- Custom styles for this template -->
+    <link href="responsive.css" rel="stylesheet"> <!-- responsive style -->
+    <style>
+        body {
+            background-color: #231a6f;
+            color: white;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .header_section,
+        .footer_section {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .container-fluid,
+        .container {
+            width: 100%;
+            padding: 0 15px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .col-md-6 {
+            width: 100%;
+            padding: 0 15px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            /* Added margin for spacing */
+        }
+
+        .two-column-layout {
+            margin: 20px 0;
+        }
+
+        .two-column-layout .left,
+        .two-column-layout .right {
+            padding: 20px;
+            border-radius: 8px;
+            color: #fffdfd;
+            box-sizing: border-box;
+        }
+
+        .two-column-layout .right h2 {
+            font-size: 28px;
+            background-color: #00d5ff89;
+            color: #ffffff;
+        }
+
+        .two-column-layout .right p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        /* Custom dropdown styles */
+        .dropdown-menu {
+            background-color: white;
+            border: none;
+        }
+
+        .dropdown-item {
+            color: black;
+        }
+
+        .dropdown-item:hover {
+            background-color: #231a6f;
+            color: #FFD700;
+            text-shadow: 0 0 8px #FFD700;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                background-color: white !important;
+            }
+        }
+
+        .search-bar {
+            display: inline-block;
+            width: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: width 0.5s ease, opacity 0.5s ease;
+            margin-left: 10px;
+            border-radius: 0;
+            background-color: #333;
+            color: white;
+            border: 1px solid #444;
+        }
+
+        .search-bar.show {
+            width: 200px;
+            opacity: 1;
+        }
+
+        .search-bar.hide {
+            width: 0;
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .col-md-6 {
+                width: 100%;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        /* Table styling */
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            margin-left: 30px;
+        }
+
+        .custom-table th,
+        .custom-table td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        .custom-table thead th {
+            background-color: #000000;
+            /* Grey color for header row */
+            color: #fff;
+            /* White text color */
+        }
+
+        .custom-table tbody tr:nth-child(even) {
+            background-color: rgba(0, 255, 238, 0.473);
+            /* Transparent background for even rows */
+        }
+
+        .custom-table tbody tr:nth-child(odd) {
+            background-color: rgba(0, 0, 0, 0);
+            /* Dark transparent background for odd rows */
+        }
+
+        .custom-table tbody td {
+            color: #fff;
+            /* White text color for all rows */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .col-md-6 {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            #carousel1 {
+                margin-left: -100px;
+            }
+
+            #carousel2 {
+                margin-left: -100px;
+            }
+
+            #carousel3 {
+                margin-left: -100px;
+            }
+
+            #carousel4 {
+                margin-left: -100px;
+            }
+
+            .h1{
+                margin-left: 230px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #carousel1 {
+                margin-left: 0px;
+            }
+
+            #carousel2 {
+                margin-left: 0px;
+            }
+
+            #carousel3 {
+                margin-left: 0px;
+            }
+
+            #carousel4 {
+                margin-left: 0px;
+            }
+
+            .header_section,
+            .footer_section {
+                padding: 10px 0;
+            }
+
+            .two-column-layout .left,
+            .two-column-layout .right {
+                padding: 10px;
+            }
+
+            .two-column-layout .right h2 {
+                font-size: 24px;
+                margin-left: 30px;
+            }
+
+            .two-column-layout .right p {
+                font-size: 14px;
+                margin-left: 30px;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .custom-table th,
+            .custom-table td {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand" href="index.html"><span>CARS</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class=""></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cars</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="toyota.html">Toyota</a>
+                                <a class="dropdown-item" href="bmw.html">BMW</a>
+                                <a class="dropdown-item" href="Volkswagen.html">Volkswagen</a>
+                                <a class="dropdown-item" href="Jaguar.html">Jaguar</a>
+                                <a class="dropdown-item" href="Maruti Suzuki.html">Maruti Suzuki</a>
+                                <a class="dropdown-item" href="Mercedes.html">Mercedes</a>
+                                <a class="dropdown-item" href="Hyundai.html">Hyundai</a>
+                                <a class="dropdown-item" href="Kia.html">Kia</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback.html"><i class="fa fa-user" aria-hidden="true"></i>
+                                feedback</a>
+                        </li>
+                        <form class="form-inline">
+                            <button class="btn my-2 my-sm-0 nav_search-btn" type="button" id="search-toggle">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                            <input type="text" class="form-control search-bar" id="search-bar" placeholder="Search...">
+                        </form>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container">
+        <!-- Row 1 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel1">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="urban-cruiser-hyryder-exterior-right-front-three-quarter-72-removebg-preview.png"
+                                    alt="Image 1" style="background-image: none;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="3vrvcva_1596592-removebg-preview.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="4m3vcva_1596598-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="6epvcva_1596590-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="mx00dva_1596600-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="njsvcva_1596594-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Toyota Urban Cruiser Hyryder</h2>
+                <p>Toyota Urban Cruiser Hyryder price for the base model starts at Rs. 13.27 Lakh and the top model price goes upto Rs. 24.09 Lakh.
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>1462 cc to 1490 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>91.18bhp & 122Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>12.40 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>180 kmph</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage</td>
+                                <td>Petrol mileage is 20.58 to 27.97 kmpl.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel2">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="innova-crysta-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="innova-crysta-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="innova-crysta-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Toyota Innova Crysta</h2>
+                <p>Toyota Innova Crysta price for the base model starts at Rs. 24.28 Lakh and the top model price goes upto Rs. 32.06 Lakh.</p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Engine,Engine Type
+                                </td>
+                                <td>2393 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>147.51bhp & 343Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>RWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>13 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>175 kmph</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage</td>
+                                <td>Diesel mileage is 12 kmpl. 
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel3">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="innova-hycross-exterior-right-front-three-quarter-73-removebg-preview.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="innova-hycross-exterior-right-front-three-quarter-73-removebg-preview.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="innova-hycross-exterior-right-front-three-quarter-73-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Toyota Innova Hycross</h2>
+                <p>Toyota Innova Hycross price for the base model starts at Rs. 23.61 Lakh and the top model price goes upto Rs. 36.83 Lakh.</p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol & Hybrid</td>
+                            </tr>
+                            <tr>
+                                <td>Engine,Engine Type</td>
+                                <td>1987 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>183.72bhp & 188Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>10.69 to 11  seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>170 kmph</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage</td>
+                                <td>Diesel mileage is 12 kmpl. td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel4">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="rumion-exterior-right-front-three-quarter-5-removebg-preview.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="rumion-exterior-right-front-three-quarter-5-removebg-preview.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="rumion-exterior-right-front-three-quarter-5-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Toyota Rumion</h2>
+                <p>Toyota Rumion price for the base model starts at Rs. 12.33 Lakh and the top model price goes upto Rs. 16.15 Lakh.
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Petrol & CNG</td>
+                            </tr>
+                            <tr>
+                                <td>Engine,Engine Type</td>
+                                <td>1462 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>86.63bhp to 101.64bhp & 121.5Nm to 136.8Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>FWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>14.3 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>170 kmph</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage</td>
+                                <td>Petrol mileage is 20.11 kmpl & CNG mileage is 26.11 km/kg.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel5">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="glanza-exterior-right-front-three-quarter-5-removebg-preview.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="glanza-exterior-right-front-three-quarter-5-removebg-preview.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="glanza-exterior-right-front-three-quarter-5-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Toyota Glanza</h2>
+                <p>Toyota Glanza price for the base model starts at Rs. 8.09 Lakh and the top model price goes upto Rs. 11.73 Lakh .
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>petrol & CNG</td>
+                            </tr>
+                            <tr>
+                                <td>Engine,Engine Type</td>
+                                <td>1462 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>86.63bhp to 101.64bhp & 121.5Nm to 136.8Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>FWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>14.92 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>180 kmph</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage</td>
+                                <td>Petrol mileage is 22.35 to 22.94 kmpl.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Row 6 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel6">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="fortuner-exterior-right-front-three-quarter-20-removebg-preview.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="fortuner-exterior-right-front-three-quarter-20-removebg-preview.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="fortuner-exterior-right-front-three-quarter-20-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Toyota Fortuner</h2>
+                <p>Toyota Fortuner Price starts from Rs. 33.43 Lakh & top model price goes upto Rs. 51.44 Lakh.
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>petrol & Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>2694 to 2755 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>163.60bhp to 201.15bhp & 245Nm to 500N</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>RWD & AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>12.40 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>190 kmph</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage</td>
+                                <td>Petrol mileage is 10 to 10.3 kmpl & Diesel mileage is 14.27 to14.4 kmpl.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 7 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel7">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="land-cruiser-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="land-cruiser-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="land-cruiser-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Toyota Land Cruiser</h2>
+                <p>Toyota Land Cruiser price for the base model is Rs. 2.39 Crore.
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>3346 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>304.41bhp & 700Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>9.9 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>209 kmph</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage</td>
+                                <td>Diesel mileage is 11-13 kmpl.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 8 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel8">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="hilux-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="hilux-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="hilux-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Toyota Hilux</h2>
+                <p>Toyota Hilux price for the base model starts at Rs. 37.07 Lakh and the top model price goes upto Rs. 46.04 Lakh.
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>2755 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>201.15 bhp & 500 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>7.8 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>185 kmph</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage</td>
+                                <td>Diesel mileage is 12.6 kmpl.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 9 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel9">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="camry-exterior-right-front-three-quarter-3-removebg-preview.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="camry-exterior-right-front-three-quarter-3-removebg-preview.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="camry-exterior-right-front-three-quarter-3-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Toyota Camry</h2>
+                <p>Toyota Camry price for the base model is Rs. 54.88 Lakh .
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Hybrid (electric + petrol)</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>2487 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>175.67bhp & 221Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>8 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>200 kmph</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage</td>
+                                <td>Petrol mileage is 20.11 kmpl & CNG mileage is 26.11 km/kg.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 10 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel10">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="fortuner-legender-exterior-right-front-three-quarter-3-removebg-preview.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="fortuner-legender-exterior-right-front-three-quarter-3-removebg-preview.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="fortuner-legender-exterior-right-front-three-quarter-3-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Toyota Fortuner Legender</h2>
+                <p>Toyota Fortuner Legender price for the base model starts at Rs. 52.84 Lakh and the top model price goes upto Rs. 57.60 Lakh.
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>2755 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>201.15bhp & 500Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>AWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>7.3 to 10.4 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>180 kmph</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage</td>
+                                <td>Petrol mileage is 14.20 to 14.40 kmpl.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 11 -->
+        <div class="row two-column-layout">
+            <div class="col-md-6 left">
+                <div class="carousel" id="carousel11">
+                    <div class="container1">
+                        <div class="background-wrapper"></div>
+                        <div class="floating-object">
+                            <div class="carousel-slide">
+                                <img src="vellfire-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="vellfire-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="vellfire-exterior-right-front-three-quarter-2-removebg-preview.png"
+                                    alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h2>Toyota Vellfire</h2>
+                <p>Toyota Vellfire price for the base model starts at Rs. 1.42 Crore and the top model price goes upto Rs. 1.54 Crore.
+                </p>
+                <!-- Add this section where you want the table to appear -->
+                <div class="container mt-0">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>information</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>Hybrid (electric + petrol)</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>2487 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Power and Torque</td>
+                                <td>140.1bhp & 240Nm</td>
+                            </tr>
+                            <tr>
+                                <td>DriveTrain</td>
+                                <td>FWD & RWD</td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration</td>
+                                <td>9.4 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>170 kmph</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage</td>
+                                <td>Hybrid mileage is19.28 kmpl.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: info@cars.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="text-center">&copy; 2024 Cars. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function initializeCarousel(carouselId) {
+                const slides = document.querySelectorAll(`#${carouselId} .carousel-slide`);
+                let currentSlide = 0;
+                const totalSlides = slides.length;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.remove('active');
+                        if (i === index) {
+                            slide.classList.add('active');
+                        }
+                    });
+                }
+
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    showSlide(currentSlide);
+                }
+
+                showSlide(currentSlide);
+                setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            // Initialize each carousel
+            initializeCarousel('carousel1');
+            initializeCarousel('carousel2');
+            initializeCarousel('carousel3');
+            initializeCarousel('carousel4');
+            initializeCarousel('carousel5');
+            initializeCarousel('carousel6');
+            initializeCarousel('carousel7');
+            initializeCarousel('carousel8');
+            initializeCarousel('carousel9');
+            initializeCarousel('carousel10');
+            initializeCarousel('carousel11');
+        });
+
+        document.getElementById('search-toggle').addEventListener('click', function () {
+            var searchBar = document.getElementById('search-bar');
+            if (searchBar.classList.contains('show')) {
+                searchBar.classList.remove('show');
+                searchBar.classList.add('hide');
+            } else {
+                searchBar.classList.remove('hide');
+                searchBar.classList.add('show');
+                searchBar.focus();
+            }
+        });
+    </script>
+</body>
+
+</html>
